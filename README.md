@@ -1,12 +1,7 @@
-# bip32-utils
-
-[![TRAVIS](https://secure.travis-ci.org/bitcoinjs/bip32-utils.png)](http://travis-ci.org/bitcoinjs/bip32-utils)
-[![NPM](http://img.shields.io/npm/v/bip32-utils.svg)](https://www.npmjs.org/package/bip32-utils)
-
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+# bip32grs-utils
 
 A set of utilities for working with BIP32.
-Compatible with bitcoinjs-lib `^2.0.0` and `^3.0.0`.
+Compatible with groestlcoinjs-lib `^3.0.0` and `^4.0.0`.
 
 
 ## Example
@@ -14,8 +9,8 @@ Compatible with bitcoinjs-lib `^2.0.0` and `^3.0.0`.
 #### BIP32 Account
 ``` javascript
 const bip39 = require('bip39')
-const bitcoin = require('bitcoinjs-lib')
-const bip32utils = require('bip32-utils')
+const bitcoin = require('groestlcoinjs-lib')
+const bip32utils = require('bip32grs-utils')
 
 let mnemonic = bip39.generateMnemonic()
 let seed = bip39.mnemonicToSeedSync(mnemonic)
@@ -31,31 +26,31 @@ let account = new bip32utils.Account([
 ])
 
 console.log(account.getChainAddress(0))
-// => 1QEj2WQD9vxTzsGEvnmLpvzeLVrpzyKkGt
+// => FtQSUR8aiRe1SUHMotkpHSnxzf8ndsktdd
 
 account.nextChainAddress(0)
 
 console.log(account.getChainAddress(1))
-// => 1DAi282VN7Ack9o5BqWYkiEsS8Vgx1rLn
+// => FVNt9vrQ3rni4MAuxHpz1GWZXbQTKjeF9b
 
 console.log(account.nextChainAddress(1))
-// => 1CXKM323V3kkrHmZQYPUTftGh9VrAWuAYX
+// => Fgh2nwkR3YSJHtngHeNwvBgbMJmokU1buK
 
-console.log(account.derive('1QEj2WQD9vxTzsGEvnmLpvzeLVrpzyKkGt'))
-// => xpub6A5Fz4JZg4kd8pLTTaMBKsvVgzRBrvai6ChoxWNTtYQ3UDVG1VyAWQqi6SNqkpsfsx9F8pRqwtKUbU4j4gqpuN2gpgQs4DiJxsJQvTjdzfA
+console.log(account.derive('FtQSUR8aiRe1SUHMotkpHSnxzf8ndsktdd'))
+// => xpub6A5Fz4JZg4kd8pLTTaMBKsvVgzRBrvai6ChoxWNTtYQ3UDVG1VyAWQqi6SNqkpsfsx9F8pRqwtKUbU4j4gqpuN2gpgQs4DiJxsJQvUW9uDs
 
 // NOTE: passing in the parent nodes allows for private key escalation (see xprv vs xpub)
 
-console.log(account.derive('1QEj2WQD9vxTzsGEvnmLpvzeLVrpzyKkGt', [external, internal]))
-// => xprv9vodQPEygdPGUWeKUVNd6M2N533PvEYP21tYxznauyhrYBBCmdKxRJzmnsTsSNqfTJPrDF98GbLCm6xRnjceZ238Qkf5GQGHk79CrFqtG4d
+console.log(account.derive('FtQSUR8aiRe1SUHMotkpHSnxzf8ndsktdd', [external, internal]))
+// => xprv9vodQPEygdPGUWeKUVNd6M2N533PvEYP21tYxznauyhrYBBCmdKxRJzmnsTsSNqfTJPrDF98GbLCm6xRnjceZ238Qkf5GQGHk79CrEtBmy6
 ```
 
 
 #### BIP32 Chains
 ``` javascript
 const bip39 = require('bip39')
-const bitcoin = require('bitcoinjs-lib')
-const bip32utils = require('bip32-utils')
+const bitcoin = require('groestlcoinjs-lib')
+const bip32utils = require('bip32grs-utils')
 
 let mnemonic = bip39.generateMnemonic()
 let seed = bip39.mnemonicToSeedSync(mnemonic)
@@ -77,46 +72,6 @@ console.log(chain.find(address))
 
 console.log(chain.pop())
 // => pops the 11th address
-```
-
-
-#### BIP32 Discovery (manual)
-``` javascript
-let bip32utils = require('bip32-utils')
-let bitcoin = require('bitcoinjs-lib')
-let Blockchain = require('cb-blockr')
-
-// ...
-
-let blockchain = new Blockchain('testnet')
-let hdNode = bitcoin.HDNode.fromSeedHex(seedHex)
-let chain = bip32utils.Chain(hdNode)
-let GAP_LIMIT = 20
-
-bip32utils.discovery(chain, GAP_LIMIT, function(addresses, callback) {
-  blockchain.addresses.summary(addresses, function(err, results) {
-    if (err) return callback(err)
-
-    let areUsed = results.map(function(result) {
-      return result.totalReceived > 0
-    })
-
-    callback(undefined, areUsed)
-  })
-}, function(err, used, checked) {
-  if (err) throw err
-
-  console.log('Discovered at most ' + used + ' used addresses')
-  console.log('Checked ' + checked + ' addresses')
-  console.log('With at least ' + (checked - used) + ' unused addresses')
-
-  // throw away ALL unused addresses AFTER the last unused address
-  let unused = checked - used
-  for (let i = 1; i < unused; ++i) chain.pop()
-
-  // remember used !== total, chain may have started at a k-index > 0
-  console.log('Total number of addresses (after prune): ', chain.addresses.length)
-})
 ```
 
 

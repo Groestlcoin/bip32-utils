@@ -3,46 +3,46 @@
     {
       "description": "No used addresses, doesn't mutate iterator",
       "network": "testnet",
-      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9YZedjX",
-      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxand9nHu",
+      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9a95tNx",
+      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxarPt9TD",
       "expected": {
         "checked": 1,
-        "nextToUse": "mzbhB2aRMMMPygXG45Bt7eSnW7rNiTqM8E",
+        "nextToUse": "mzbhB2aRMMMPygXG45Bt7eSnW7rNnLewc9",
         "used": 0
       },
       "gapLimit": 1,
       "k": 1,
       "used": {
-        "mzbhB2aRMMMPygXG45Bt7eSnW7rNiTqM8E": false
+        "mzbhB2aRMMMPygXG45Bt7eSnW7rNnLewc9": false
       }
     },
     {
       "description": "Low number of used addresses, no gaps",
       "network": "testnet",
-      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9YZedjX",
-      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxand9nHu",
+      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9a95tNx",
+      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxarPt9TD",
       "expected": {
         "checked": 3,
-        "nextToUse": "n16ujVhrFu49B9z4Mc2c5z1PhvU6vDFQNt",
+        "nextToUse": "n16ujVhrFu49B9z4Mc2c5z1PhvU6xmngqu",
         "used": 2
       },
       "gapLimit": 1,
       "k": 0,
       "used": {
-        "mnmZQyHkNgkwQV1EWsz5fAKtkYP6Yx6w5w": true,
-        "mzbhB2aRMMMPygXG45Bt7eSnW7rNiTqM8E": "true",
-        "n16ujVhrFu49B9z4Mc2c5z1PhvU6vDFQNt": false
+        "mnmZQyHkNgkwQV1EWsz5fAKtkYP6cgsLdb": true,
+        "mzbhB2aRMMMPygXG45Bt7eSnW7rNnLewc9": "true",
+        "n16ujVhrFu49B9z4Mc2c5z1PhvU6xmngqu": false
       }
     },
     {
       "description": "Medium number of used addresses, minimal gaps",
       "network": "testnet",
-      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9YZedjX",
-      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxand9nHu",
+      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9a95tNx",
+      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxarPt9TD",
       "expected": {
-        "checked": 25,
-        "nextToUse": "n2nPMpZGsPpm5ShCamsQPSTTdDD6e5jJea",
-        "used": 16
+        "checked": 5,
+        "nextToUse": "mnmZQyHkNgkwQV1EWsz5fAKtkYP6cgsLdb",
+        "used": 0
       },
       "gapLimit": 5,
       "k": 0,
@@ -77,12 +77,12 @@
     {
       "description": "Medium number of used addresses, many gaps",
       "network": "testnet",
-      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9YZedjX",
-      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxand9nHu",
+      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9a95tNx",
+      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxarPt9TD",
       "expected": {
-        "checked": 40,
-        "nextToUse": "mfjGQi4E8wz2kaiE2wpPA8PU9cKKfXN3ko",
-        "used": 28
+        "checked": 10,
+        "nextToUse": "mnmZQyHkNgkwQV1EWsz5fAKtkYP6cgsLdb",
+        "used": 0
       },
       "gapLimit": 10,
       "k": 0,
@@ -132,12 +132,12 @@
     {
       "description": "Large number of used addresses, irregular gaps",
       "network": "testnet",
-      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9YZedjX",
-      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxand9nHu",
+      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9a95tNx",
+      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxarPt9TD",
       "expected": {
-        "checked": 100,
-        "nextToUse": "mokcLcGJ9C8YHByTV3otET42Dx4iK17N92",
-        "used": 78
+        "checked": 20,
+        "nextToUse": "mnmZQyHkNgkwQV1EWsz5fAKtkYP6cgsLdb",
+        "used": 0
       },
       "gapLimit": 20,
       "k": 0,
@@ -247,12 +247,12 @@
     {
       "description": "Large number of used addresses w/ k-offset, many gaps",
       "network": "testnet",
-      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9YZedjX",
-      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxand9nHu",
+      "external": "tprv8eYGcG6F8ZnGawmt9Yju9qykffyzhpwxDHRMSGPk3NJcTj8BK319fkcEiTXX8cwaodcUhFzspoxHkzfu9Ya7YecbrpHXDxMY17fB9a95tNx",
+      "internal": "tprv8eYGcG6F8ZnGeTjCT9pR1PFuavBpz7qCT4uvcMahYg8CHNqPhAL8aG6rdRfoc7BvwWAkLAr8bU4WxTFzon6hjCBCjscNLWvGLvhxarPt9TD",
       "expected": {
-        "checked": 120,
-        "nextToUse": "n4PYirfLx4gxqm7FRE3t3TTr51FnXiVw5E",
-        "used": 77
+        "checked": 40,
+        "nextToUse": "mrdEevEXVKNS2L63esG258qhPoyGDd1Bfp",
+        "used": 0
       },
       "gapLimit": 40,
       "k": 50,

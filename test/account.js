@@ -21,7 +21,7 @@ test('containsAddress', function (t) {
     t.equal(account.containsAddress(address), true, 'returns true for known chain address')
   })
 
-  t.equal(account.containsAddress('mpFZW4A9QtRuSpuh9SmeW7RSzFE3TgB8Ko'), false, 'returns false for unknown address')
+  t.equal(account.containsAddress('mpFZW4A9QtRuSpuh9SmeW7RSzFE3XL3FQp'), false, 'returns false for unknown address')
   t.end()
 })
 
@@ -186,7 +186,7 @@ test('derive', function (t) {
       })
     })
 
-    const unknown = neutered.derive('mpFZW4A9QtRuSpuh9SmeW7RSzFE3TgB8Ko')
+    const unknown = neutered.derive('mpFZW4A9QtRuSpuh9SmeW7RSzFE3XL3FQp')
     t.equal(undefined, unknown, 'ignores unknown addresses')
     t.end()
   })
@@ -205,7 +205,7 @@ test('derive', function (t) {
       })
     })
 
-    const unknown = neutered.derive('mpFZW4A9QtRuSpuh9SmeW7RSzFE3TgB8Ko')
+    const unknown = neutered.derive('mpFZW4A9QtRuSpuh9SmeW7RSzFE3XL3FQp')
     t.equal(undefined, unknown, 'ignores unknown addresses')
     t.end()
   })
@@ -220,7 +220,7 @@ test('derive', function (t) {
       })
     })
 
-    const unknown = neutered.derive('mpFZW4A9QtRuSpuh9SmeW7RSzFE3TgB8Ko')
+    const unknown = neutered.derive('mpFZW4A9QtRuSpuh9SmeW7RSzFE3XL3FQp')
     t.equal(undefined, unknown, 'ignores unknown addresses')
     t.end()
   })

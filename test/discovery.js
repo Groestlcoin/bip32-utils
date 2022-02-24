@@ -1,5 +1,5 @@
-const bitcoinjs = require('bitcoinjs-lib')
-const bip32 = require('bip32')
+const bitcoinjs = require('groestlcoinjs-lib')
+const bip32 = require('bip32grs')
 const Chain = require('../chain')
 const discovery = require('../discovery')
 const test = require('tape')

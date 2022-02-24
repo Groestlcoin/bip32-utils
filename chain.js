@@ -1,6 +1,6 @@
 const Buffer = require('safe-buffer').Buffer
 const createHash = require('create-hash')
-const bs58check = require('bs58check')
+const bs58grscheck = require('bs58grscheck')
 
 function ripemd160 (buffer) {
   return createHash('rmd160').update(buffer).digest()
@@ -19,7 +19,7 @@ function toBase58Check (hash, version) {
   payload.writeUInt8(version, 0)
   hash.copy(payload, 1)
 
-  return bs58check.encode(payload)
+  return bs58grscheck.encode(payload)
 }
 
 function DEFAULT_ADDRESS_FUNCTION (node, network) {

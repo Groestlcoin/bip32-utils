@@ -1,4 +1,4 @@
-const bip32 = require('bip32')
+const bip32 = require('bip32grs')
 const discovery = require('./discovery')
 
 const Chain = require('./chain')

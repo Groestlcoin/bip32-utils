@@ -1,28 +1,28 @@
 {
-  "name": "bip32-utils",
+  "name": "bip32grs-utils",
   "version": "0.11.1",
   "description": "A set of utilities for working with BIP32.",
-  "author": "Daniel Cousens",
+  "author": "Groestlcoin developers",
   "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitcoinjs/bip32-utils.git"
+    "url": "https://github.com/Groestlcoin/bip32grs-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/bitcoinjs/bip32-utils/issues"
+    "url": "https://github.com/Groestlcoin/bip32grs-utils/issues"
   },
-  "homepage": "https://github.com/bitcoinjs/bip32-utils",
+  "homepage": "https://github.com/Groestlcoin/bip32grs-utils",
   "keywords": [
-    "bip32-utils",
+    "bip32grs-utils",
     "bip32",
     "bip44",
     "account",
     "chain",
     "discovery",
     "gap",
-    "bitcoinjs",
-    "bitcoin"
+    "groestlcoinjs",
+    "groestlcoin"
   ],
   "scripts": {
     "coverage-report": "nyc report --reporter=lcov",
@@ -33,7 +33,7 @@
     "unit": "tape test/*.js"
   },
   "devDependencies": {
-    "bitcoinjs-lib": "^5.1.7",
+    "groestlcoinjs-lib": "^5.1.7",
     "keccak": "^3.0.0",
     "nyc": "^15.0.0",
     "standard": "^14.3.1",
@@ -43,8 +43,8 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "bip32": "^2.0.5",
-    "bs58check": "^2.1.2",
+    "bip32grs": "^2.0.5",
+    "bs58grscheck": "^2.1.2",
     "create-hash": "^1.2.0",
     "safe-buffer": "^5.2.0"
   }
